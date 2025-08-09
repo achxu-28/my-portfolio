@@ -1,26 +1,160 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("../assets/fonts/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins-Light;
+  src: url("../assets/fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../assets/fonts/Poppins-Bold.ttf");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+
+@font-face {
+  font-family: Doto;
+  src: url("../assets/fonts/Doto-Regular.ttf");
+}
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url("../assets/fonts/Raleway-ExtraLight.ttf");
+}
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url("../assets/fonts/Raleway-SemiBold.ttf");
+}
+@font-face {
+  font-family: Raleway;
+  src: url("../assets/fonts/Raleway-Regular.ttf");
+}
+
+
+
+@import "tailwindcss";
+
+
+@theme  {
+  --font-doto: Doto, sans-serif;
+  --font-raleway-semibold: Raleway-SemiBold, sans-serif;
+  --font-raleway-light: Raleway-ExtraLight, sans-serif;
+  --font-raleway: Raleway, sans-serif;
+
+  --font-poppins-semi-bold: Poppins-SemiBold, sans-serif;
+  --font-poppins-regular: Poppins-Regular, sans-serif;
+  --font-poppins-light: Poppins-Light, sans-serif;
+  --font-poppins-bold: Poppins-Bold, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --body: #ffffff;
+    --primary: #0a0a0a;
+    --secondary: #0a0a0a;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--body);
+  color: var(--primary);
+  font-family: Poppins-Regular;
+}
+
+
+.wrapper {
+  width: 90%;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  background-color: #cea4e300;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 120px;
+  margin-top: 2rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0),
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0)
+  );
+}
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+@keyframes scrollRight {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.itemRight {
+  width: 200px;
+  height: 100px;
+  background-color:#ffffff30;
+  box-shadow: 0px 0px 7px -1px #1e47ff30;
+  border-radius: 1.5rem;
+  /* border: 1px solid ;
+  border-color: #5597fb20; */
+  backdrop-filter: blur(10px);
+  position: absolute;
+  left: 100%;
+  animation-name: scrollRight;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  width: 200px;
+  height: 100px;
+  background-color:#ffffff30;
+  box-shadow: 0px 0px 7px -1px #1e47ff30;
+  border-radius: 1.5rem;
+  /* border: 1px solid ;
+  border-color: #5597fb20; */
+  backdrop-filter: blur(10px);
+  position: absolute;
+  left: 100%;
+  animation-name: scrollLeft;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item1{
+  animation-delay: calc(24s / 6 * (6 - 1) * -1);
+}
+.item2{
+  animation-delay: calc(24s / 6 * (6 - 2) * -1);
+}
+.item3{
+  animation-delay: calc(24s / 6 * (6 - 3) * -1);
+}
+.item4{
+  animation-delay: calc(24s / 6 * (6 - 4) * -1);
+}
+.item5{
+  animation-delay: calc(24s / 6 * (6 - 5) * -1);
+}
+.item6{
+  animation-delay: calc(24s / 6 * (6 - 6) * -1);
 }
