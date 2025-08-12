@@ -41,7 +41,7 @@ const VisionPage = () => {
   });
 
   const x = useTransform(scrollY, [0, 1900], [1900, 0]);
-  const opacity = useTransform(scrollY, [1500, 1700], [1, 0]);
+  const opacity = useTransform(scrollY, [1500, 1750], [1, 0.3]);
   return (
     <>
       <div
@@ -50,7 +50,7 @@ const VisionPage = () => {
       >
       <motion.h3 
       style={{ opacity }}
-      className="text-[1.5rem]  sm:text-[2.5rem] font-raleway text-gray-700 pt-10 sm:pt-20 sm:pb-20 px-35 text-left sticky top-20">
+      className="text-[1.5rem]  sm:text-[2.5rem] font-raleway text-gray-700 pt-10 sm:pt-20 sm:pb-20 px-20 md:px-35 text-left sticky top-20">
         I believe in building websites that are not only functional but also beautiful and intuitive.
          My approach is guided by these three pillars.
       </motion.h3>
@@ -58,20 +58,20 @@ const VisionPage = () => {
       
         
 
-        <div className="flex justify-between ">
+        <div className="flex flex-col lg:flex-row justify-between ">
           {card.map((items, i) => (
             <motion.div
               style={{ x }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, ease: "linear" }}
+              transition={{ duration: 1.5, ease: "linear" }}
               key={i}
               className="flex flex-col items-center"
             >
               
 
               <div
-                className="flex flex-col  px-4 items-center mt-15 sm:mt-15 w-100 h-90 gap-2 py-3 
+                className="flex flex-col  px-4 items-center mt-15 sm:mt-15 sm:w-100 h-90 gap-2 py-3 
               rounded-[15px] shadow-[0px_2px_8px_-1px_#1e47ff60] backdrop-blur-[10px] bg-[#ffffff40]"
               >
                 <div className="flex gap-1 ">

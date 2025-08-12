@@ -26,11 +26,11 @@ const Hero = () => {
 
   <motion.div
         style={{ scale, opacity, x }}
-        className="flex flex-col py-10
+        className="flex flex-col py-20 md:py-15 lg:py-10
          
       "
       >
-        <div className=" flex font-poppins-regular w-full text-[3.8rem] sm:text-[12rem] -mt-5 sm:-mt-10
+        <div className=" flex font-poppins-regular  w-full text-[clamp(4rem,14vw,12rem)] -mt-5 lg:-mt-10
         text-gray-900 relative">
           <HoverableArea>
             {/* <p className="w-[36rem] -z-1 h-[3rem] bg-[#bed0f1] absolute flex top-40"></p> */}
@@ -40,10 +40,10 @@ const Hero = () => {
           </HoverableArea>
 
         </div>
-        <div className="flex text-[3.8rem] font-poppins-regular sm:text-[12rem] -mt-5 sm:-mt-30 
+        <div className="flex  font-poppins-regular  text-[clamp(4rem,14vw,12rem)] -mt-5 md:-mt-20 xl:-mt-[7.5rem] 
         text-gray-900 relative">
           <HoverableArea>
-            <p className="w-[70rem] -z-1 h-[3rem] bg-[#bed0f1] absolute flex top-50 "></p>            
+            <p className="w-[70vw] hidden  -z-1 h-[3rem] bg-[#bed0f1] absolute sm:flex top-[25vh] "></p>            
             <h2 className="z-20 font-raleway tracking-wide ">Mamenholy</h2>
           </HoverableArea>
 

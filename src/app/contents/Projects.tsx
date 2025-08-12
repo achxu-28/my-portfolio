@@ -25,7 +25,7 @@ const Projects = () => {
           >
             PROJECTS
           </p>
-          <motion.p className="-z-20 font-raleway w-[100vh] flex justify-start text-gray-700 text-[2.5rem] text-left tracking-wide pt-4 sm:pt-10"
+          <motion.p className="-z-20 font-raleway md:w-[100vh] flex justify-start text-gray-700 text-[clamp(1.5rem,2vw,2.5rem)] text-left tracking-wide pt-10"
           style={{opacity}}>
             Here are some of my recent projects that showcase my skills and creativity in web development:
           </motion.p>
@@ -34,13 +34,13 @@ const Projects = () => {
         {/* first project  */}
         <motion.div
           style={{ y }}
-          className="w-full  flex justify-center  pt-10
+          className="w-full flex justify-center  pt-10
           h-[90vh]  sticky top-0 max-sm:h-[90vh]"
         >
 
           <div
             className="bg-amber-600/0 border-1 border-blue-500/20  shadow-[0px_0px_8px_1px_#1e47ff30] 
-              backdrop-blur-[10px] rounded-[2.1rem] h-full  w-full grid grid-cols-2 overflow-hidden"
+              backdrop-blur-[10px] rounded-[2.1rem] h-full  w-full grid md:grid-cols-2 overflow-hidden"
           >
             <div className="col-span-1 flex bg-gradient-to-bl from-[#f0f5ff] via-blue-500/60 to-[#a4d0f260] p-4 overflow-hidden">
               <motion.div
@@ -55,14 +55,14 @@ const Projects = () => {
               className="colspan-1 flex flex-col justify-center items-start pl-4 gap-4
                   backdrop-blur-[10px] bg-[#ffffff40] font-raleway relative"
             >
-              <p className=" w-[22rem] -z-1 h-[1.5rem] bg-[#bed0f1] absolute flex top-66 "></p>
+              <p className=" w-[22rem] -z-1 h-[1.5rem] hidden bg-[#bed0f1] absolute lg:flex top-66 "></p>
               <p
-                className="font-semibold text-[2rem] 
+                className="font-semibold md:text-[2rem] text-[1.5rem] 
                       "
               >
                 E-Commerce Platform
               </p>
-              <p className="pt-4 text-gray-600 text-[1.2rem] ">
+              <p className="pt-4 text-gray-600 md:text-[1.2rem] text-[1rem] ">
                 A working prototype of an E-commerce platform build using MERN
                 stack
               </p>
@@ -79,13 +79,13 @@ const Projects = () => {
         {/* second project  */}
         <div
           className="w-full flex justify-center items-center pt-10
-          h-[90vh]  sticky top-0 max-sm:h-[90vh]"
+          h-[90vh]  sticky top-0 max-sm:h-[90vh] "
         >
           {/* project tag */}
 
           <div
             className=" border-1 border-blue-500/20  
-              backdrop-blur-[14px] rounded-[2.1rem] h-full  w-full grid grid-cols-2 overflow-hidden"
+              backdrop-blur-[14px] rounded-[2.1rem] h-full  w-full grid md:grid-cols-2 overflow-hidden"
           >
             <div className="col-span-1 flex bg-gradient-to-bl from-[#f0f5ff] via-blue-500/60 to-[#a4d0f260] p-4 overflow-hidden">
               <motion.div
@@ -100,14 +100,14 @@ const Projects = () => {
               className="colspan-1 flex flex-col justify-center items-start pl-4 gap-4
                   backdrop-blur-[10px] bg-[#ffffff40] font-raleway relative"
             >
-              <p className=" w-[22rem] -z-1 h-[1.5rem] bg-[#bed0f1] absolute flex top-66 "></p>
+              <p className=" w-[22rem] -z-1 h-[1.5rem] hidden bg-[#bed0f1] absolute lg:flex top-66 "></p>
               <p
-                className="font-semibold text-[2rem] 
+                className="font-semibold md:text-[2rem] text-[1.5rem] 
                       "
               >
                 AI text generator
               </p>
-              <p className="pt-4 text-gray-600 text-[1.2rem] ">
+              <p className="pt-4 text-gray-600 md:text-[1.2rem] text-[1rem] ">
                 A working prototype of an AI text generator built using Next.js
                 and Tailwind CSS
               </p>
@@ -130,7 +130,7 @@ const Projects = () => {
 
           <div
             className=" border-1 border-blue-500/20  
-              backdrop-blur-[16px] rounded-[2.1rem] h-full  w-full grid grid-cols-2 overflow-hidden"
+              backdrop-blur-[16px] rounded-[2.1rem] h-full  w-full grid md:grid-cols-2 overflow-hidden"
           >
             <div className="col-span-1 flex bg-gradient-to-bl from-[#f0f5ff] via-blue-500/60 to-[#a4d0f260] p-4 overflow-hidden">
               <motion.div
@@ -145,14 +145,14 @@ const Projects = () => {
               className="colspan-1 flex flex-col justify-center items-start pl-4 gap-4
                   backdrop-blur-[10px] bg-[#ffffff40] font-raleway relative"
             >
-              <p className=" w-[22rem] -z-1 h-[1.5rem] bg-[#bed0f1] absolute flex top-66 "></p>
+              <p className=" w-[22rem] -z-1 h-[1.5rem] hidden bg-[#bed0f1] absolute lg:flex top-66 "></p>
               <p
-                className="font-semibold text-[2rem] 
+                className="font-semibold md:text-[2rem] text-[1.5rem] 
                       "
               >
                 Emirates Opticals Landing page
               </p>
-              <p className="pt-4 text-gray-600 text-[1.2rem] ">
+              <p className="pt-4 text-gray-600 md:text-[1.2rem] text-[1rem] ">
                 A working prototype of an Emirates Opticals landing page built
                 using Next.js and Tailwind CSS
               </p>

@@ -44,7 +44,7 @@ const StickyDemo = () => {
           <div className=" w-full h-[450px] sticky top-56 
           backdrop-blur-[10px] bg-[#e4f5fa5c] border-1 border-l-0 border-blue-500/20  
           rounded-br-[50px] p-8 grid place-content-center text-3xl ">
-            Card 4
+            Card 5
           </div>
           
         </div>

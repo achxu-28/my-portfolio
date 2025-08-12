@@ -53,14 +53,17 @@ const Footer = () => {
       <div className="flex flex-col justify-center relative">
         <motion.div
           style={{ opacity }}
-          className="sticky top-0 text-[2.7rem]  text-gray-700 text-center font-raleway w-full h-[90vh] flex justify-center items-center pr-200"
+          className="lg:sticky top-0 text-[2.4rem]  text-gray-700 font-raleway w-full h-[90vh] flex text-left items-center pl-10"
         >
-          ready to manifest your{" "}
-          <p className="pl-2 bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent">
-            ideas?
-          </p>
+          <div className="lg:flex">
+            ready to manifest your
+            <pre className="pl-2 bg-gradient-to-br font-raleway from-blue-500 to-red-500 bg-clip-text text-transparent">
+              ideas?
+            </pre>
+          </div>
         </motion.div>
-        <div className="sticky top-0 text-[2.2rem]  text-gray-700 text-center font-raleway w-full h-[90vh] flex flex-col justify-center  pl-10 pr-210">
+
+        <div className="lg:sticky top-0 text-[clamp(1rem,12vw,2.2rem)]  text-gray-700 text-left font-raleway w-full h-[90vh] flex flex-col justify-center  md:pl-10 lg:pr-210">
           <p className="text-left">
             Let's collaborate! Drop me a message, and let's create something
             exceptional
@@ -76,16 +79,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="sticky top-0 min-h-[100vh] flex items-center justify-center font-raleway gap-5 pt-40  ">
+        <div className="lg:sticky top-0 min-h-[100vh] flex items-center justify-center font-raleway gap-5 pt-40  ">
           <h2 className=" text-[2.5rem] text-gray-700 text-center w-1/3"></h2>
 
           <div id="contact" className="flex flex-col justify-center h-[100vh] ">
-            <div className="text-[6rem] font-bold text-gray-700 flex items-center gap-8">
+            <div className="text-[clamp(2rem,12vw,6rem)] font-bold text-gray-700 flex items-center gap-2 md:gap-4 xl:gap-6 ">
               <h2>Let's</h2>
               <h2 className="bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent">
                 Connect
               </h2>
-              <PaperClip className="size-22 " />
+              <PaperClip className="size-[clamp(3rem,12vw,6rem)] " />
             </div>
 
             <form
