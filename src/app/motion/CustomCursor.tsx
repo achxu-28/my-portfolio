@@ -1,23 +1,36 @@
-"use client"
-import React, { useState, useEffect, useContext, createContext } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+"use client";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  ReactNode,
+} from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // ---------------------------------------------------------------------------
 // 1. CURSOR CONTEXT & PROVIDER
-// This sets up the global state for hover detection.
 // ---------------------------------------------------------------------------
+type HoverContextType = {
+  isHovered: boolean;
+  setIsHovered: (value: boolean) => void;
+};
 
-const HoverContext = createContext();
+const HoverContext = createContext<HoverContextType>({
+  isHovered: false,
+  setIsHovered: () => {
+    throw new Error("setIsHovered called outside of HoverProvider");
+  },
+});
 
-/**
- * HoverProvider
- * Wrap your application's layout or a specific page with this component.
- * It provides the hover state to all its children.
- */
-export const HoverProvider = ({ children }) => {
+type HoverProviderProps = {
+  children: ReactNode;
+};
+
+export const HoverProvider = ({ children }: HoverProviderProps) => {
   const [isHovering, setIsHovering] = useState(false);
   return (
-    <HoverContext.Provider value={{ isHovering, setIsHovering }}>
+    <HoverContext.Provider value={{ isHovered: isHovering, setIsHovered: setIsHovering }}>
       {children}
     </HoverContext.Provider>
   );
@@ -25,65 +38,48 @@ export const HoverProvider = ({ children }) => {
 
 // ---------------------------------------------------------------------------
 // 2. CUSTOM HOOK
-// A convenience hook to access the hover state and setter.
 // ---------------------------------------------------------------------------
-
-/**
- * useHover
- * A custom hook to easily access the hover context.
- * Throws an error if used outside of a HoverProvider.
- */
-export const useHover = () => {
-    const context = useContext(HoverContext);
-    if (context === undefined) {
-        throw new Error('useHover must be used within a HoverProvider');
-    }
-    return context;
+export const useHover = (): HoverContextType => {
+  const context = useContext(HoverContext);
+  if (!context) {
+    throw new Error("useHover must be used within a HoverProvider");
+  }
+  return context;
 };
 
 // ---------------------------------------------------------------------------
 // 3. HOVERABLE AREA COMPONENT
-// A wrapper component to make any element trigger the hover effect.
 // ---------------------------------------------------------------------------
+type HoverableAreaProps = {
+  children: ReactNode;
+};
 
-/**
- * HoverableArea
- * Wrap any component or element with this to trigger the custom cursor
- * animation on mouse enter and leave.
- */
-export const HoverableArea = ({ children }) => {
-    const { setIsHovering } = useHover();
-    return (
-        <div 
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-        >
-            {children}
-        </div>
-    );
+export const HoverableArea = ({ children }: HoverableAreaProps) => {
+  const { setIsHovered } = useHover();
+  return (
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {children}
+    </div>
+  );
 };
 
 // ---------------------------------------------------------------------------
 // 4. CUSTOM CURSOR COMPONENT
-// The visual part of the cursor that follows the mouse.
 // ---------------------------------------------------------------------------
-
-/**
- * CustomCursor
- * This component renders the animated cursor.
- * Place it once in your main layout file (e.g., _app.js or layout.js).
- */
 export const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { isHovering } = useHover();
+  const { isHovered } = useHover();
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -91,19 +87,19 @@ export const CustomCursor = () => {
     default: {
       x: mousePosition.x - 12,
       y: mousePosition.y - 12,
-      backgroundColor: '#3B82F6',
+      backgroundColor: "#3B82F6",
       height: 24,
       width: 24,
-      mixBlendMode: 'multiply',
+      mixBlendMode: "multiply",
     },
     text: {
       x: mousePosition.x - 12,
       y: mousePosition.y - 12,
-      backgroundColor: '#3B82F6',
+      backgroundColor: "#3B82F6",
       opacity: 0.8,
       height: 80,
       width: 80,
-      mixBlendMode: 'normal',
+      mixBlendMode: "normal",
     },
   };
 
@@ -116,11 +112,11 @@ export const CustomCursor = () => {
     <motion.div
       className="scroll-smooth fixed top-0 left-0 rounded-full pointer-events-none z-50 flex items-center justify-center"
       variants={cursorVariants}
-      animate={isHovering ? 'text' : 'default'}
-      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+      animate={isHovered ? "text" : "default"}
+      transition={{ type: "spring", stiffness: 500, damping: 30 }}
     >
       <AnimatePresence>
-        {isHovering && (
+        {isHovered && (
           <motion.span
             className="text-[16px] font-bold text-white"
             variants={textVariants}
@@ -128,7 +124,7 @@ export const CustomCursor = () => {
             animate="visible"
             exit="hidden"
           >
-            hi, I'm..
+            hi, I&apos;m..
           </motion.span>
         )}
       </AnimatePresence>

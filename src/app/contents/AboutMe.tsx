@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "motion/react"
 import Skills from "./Skills";
 
 const AboutMe = () => {
@@ -8,7 +7,7 @@ const AboutMe = () => {
       <div className="mt-10 ">
         <div className="flex font-poppins-light justify-between text-[0.9rem] sm:text-[1rem] text-blue-600/80 border-b-1 border-blue-600/50">
           <h3>02</h3>
-          <h3>//MORE ABOUT ME</h3>
+          <h3>{'// MORE ABOUT ME'}</h3>
           <h3>SINCE 2002</h3>
         </div>
 
@@ -24,7 +23,7 @@ const AboutMe = () => {
 
       <div className="flex flex-col justify-center mt-5 sm:mt-55 ">
         <p className="text-[0.9rem] sm:text-[1.2rem] font-poppins-light sm:mx-50 text-gray-300 ">
-          I'm a self-taught mern stack developer with expertise in react,
+          I&apos;m a self-taught mern stack developer with expertise in react,
           next.js, node.js, and mongodb. skilled in building scalable web
           applications, developing effficient APIs, and optimizing performance
           for seamless user experiences...

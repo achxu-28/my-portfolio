@@ -6,7 +6,6 @@ import ReactIcon from "../_skillIcons/ReactIcon";
 import NextIcon from "../_skillIcons/NextIcon";
 import Nodejs from "../_skillIcons/Nodejs";
 import MongoDBicon from "../_skillIcons/MongoDBicon";
-import Expressjs from "../_skillIcons/Expressjs";
 import TailwindIcon from "../_skillIcons/TailwindIcon";
 import GitIcon from "../_skillIcons/GitIcon";
 import Framer from "../_skillIcons/Framer";

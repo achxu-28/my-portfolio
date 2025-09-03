@@ -11,27 +11,28 @@ import Resume from "../_icons/Resume";
 import Link from "next/link";
 
 const Footer = () => {
-  const form = useRef(); // Create a ref for the form element
+  const form = useRef<HTMLFormElement>(null); // Create a ref for the form element
 
   // State for submission status
   const [status, setStatus] = useState(""); // 'loading', 'success', 'error'
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current, // Pass the form element
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+  form.current!,
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+)
+
       .then(
         (result) => {
           console.log(result.text);
           setStatus("success");
-          form.current.reset(); // Reset the form fields
+          if (form.current) form.current.reset(); // Reset the form fields
         },
         (error) => {
           console.log(error.text);
@@ -65,7 +66,7 @@ const Footer = () => {
 
         <div className="lg:sticky top-0 text-[clamp(1rem,12vw,2.2rem)]  text-gray-700 text-left font-raleway w-full h-[90vh] flex flex-col justify-center  md:pl-10 lg:pr-210">
           <p className="text-left">
-            Let's collaborate! Drop me a message, and let's create something
+            Let&apos;s collaborate! Drop me a message, and let&apos;s create something
             exceptional
             <span className="pl-2 bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent">
               together!
@@ -84,7 +85,7 @@ const Footer = () => {
 
           <div id="contact" className="flex flex-col justify-center h-[100vh] ">
             <div className="text-[clamp(2rem,12vw,6rem)] font-bold text-gray-700 flex items-center gap-2 md:gap-4 xl:gap-6 ">
-              <h2>Let's</h2>
+              <h2>Let&apos;s</h2>
               <h2 className="bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent">
                 Connect
               </h2>

@@ -5,7 +5,7 @@ const Experience = () => {
     <>
       <div className=" font-poppins-light mt-10 text-[0.9rem] sm:text-[1rem] flex justify-between text-blue-600/80 border-b-1 border-blue-600/50">
         <h3 className="">03</h3>
-        <h3 className="">//EXPERIENCE</h3>
+        <h3 className="">{'// EXPERIENCE'}</h3>
         <h3 className="">3 PHASES</h3>
       </div>
 

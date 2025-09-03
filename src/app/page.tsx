@@ -1,5 +1,4 @@
-import AboutMe from "./contents/AboutMe";
-import Experience from "./contents/Experience";
+
 import Footer from "./contents/Footer";
 import Header from "./contents/Header";
 import Hero from "./contents/Hero";

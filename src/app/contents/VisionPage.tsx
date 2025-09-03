@@ -4,7 +4,7 @@ import Window1 from "../../../public/image/window1.jpeg";
 import Window2 from "../../../public/image/window2.jpeg";
 import Window3 from "../../../public/image/window3.jpeg";
 import React from "react";
-import { useScroll, useTransform, motion, useSpring } from "motion/react";
+import { useScroll, useTransform, motion } from "motion/react";
 
 
 const card = [
@@ -35,11 +35,12 @@ const card = [
 ];
 const VisionPage = () => {
   const { scrollY } = useScroll();
-  const smoothScrollY = useSpring(scrollY, {
-    stiffness: 50,
-    damping: 50,
-  });
+  // const smoothScrollY = useSpring(scrollY, {
+  //   stiffness: 50,
+  //   damping: 50,
+  // });
 
+  
   const x = useTransform(scrollY, [0, 1900], [1900, 0]);
   const opacity = useTransform(scrollY, [1500, 1750], [1, 0.3]);
   return (

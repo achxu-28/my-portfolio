@@ -31,15 +31,15 @@ const PortfolioImage = () => {
           >
             <p className="w-[36rem] -z-1 h-[3rem] bg-[#bed0f1] hidden absolute xl:flex top-52 "></p>
             <h2 className="font-raleway flex tracking-tight">
-              I'M <pre className="font-raleway bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent"> AKASH MAMENHOLY</pre>
+              I&apos;M <pre className="font-raleway bg-gradient-to-br from-blue-500 to-red-500 bg-clip-text text-transparent"> AKASH MAMENHOLY</pre>
             </h2>
             <h2 className="md:-mt-5 -mt-2 font-raleway tracking-tight">BASED IN KERALA, INDIA.</h2>
             <p className="font-raleway font-thin md:text-[1.7rem] text-[1.2rem]  pt-4 sm:pt-10  text-gray-700">
-              "I'm a full-stack developer with a strong focus on frontend
+              &quot;I&apos;m a full-stack developer with a strong focus on frontend
               development, crafting intuitive and visually striking user
               experiences. Passionate about clean code, responsive design, and
               seamless interactivity, I bring ideas to life with modern web
-              technologies."
+              technologies.&quot;
             </p>
           </div>
         </motion.div>
